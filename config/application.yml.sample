@@ -1,0 +1,5 @@
+SECRET_KEY_BASE: rake secret
+TWILIO_ACCOUNT_SID: account_sid from Twilio
+TWILIO_AUTH_TOKEN: auth_token from Twilio
+TWILIO_FROM_NUMBER: from_number from Twilio
+GIPHY_KEY: public beta key or production key

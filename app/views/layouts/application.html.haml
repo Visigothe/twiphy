@@ -1,0 +1,28 @@
+!!!
+%html{lang: 'en'}
+  %head
+    %meta{content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no'}
+    %title Twiphy
+    %link{rel: 'canonical', href: root_path}
+    %meta{name: 'description', content: 'Send a friend a GIF using Twilio and Giphy' }
+    = csrf_meta_tags
+    %link{crossorigin: 'anonymous', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity: 'sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', rel: 'stylesheet'}
+    %script{:src => "https://use.fontawesome.com/396cff7c89.js"}
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %nav.navbar.navbar-toggleable-md.sticky-top.navbar-inverse.bg-inverse
+      = link_to 'Twiphy', root_path, class: 'navbar-brand'
+    - if flash.any?
+      - flash.each do |k,v|
+        .alert.alert-dismissible.fade.show{class: "alert-#{k}", role: 'alert'}
+          %button.close{'aria-label' => 'Close', 'data-dismiss' => 'alert', type: 'button'}
+            %span{'aria-hidden' => 'true'} ×
+          = v
+
+    = yield
+    / jQuery first, then Tether, then Bootstrap JS.
+    %script{crossorigin: 'anonymous', integrity: 'sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', src: 'https://code.jquery.com/jquery-3.1.1.slim.min.js'}
+    %script{crossorigin: 'anonymous', integrity: 'sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb', src: 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'}
+    %script{crossorigin: 'anonymous', integrity: 'sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn', src: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'}
