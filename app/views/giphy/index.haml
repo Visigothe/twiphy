@@ -24,4 +24,6 @@
           .card-block
             %img.card-img-bottom{src: src}
           .card-footer
-            %button.btn.btn-primary Send GIF
+            = form_for :twilio, url: new_twilio_send_path, method: :get do |f|
+              = f.text_field :media_url, value: src, hidden: true, readonly: true
+              = f.submit 'Send GIF', class: 'btn btn-primary'
