@@ -1,7 +1,10 @@
 # README
 
-## Requirements
-Ruby version: >= 2.3.1
+## Ruby Version
+>= 2.3.1
+
+## Rails Version
+~> 5.1.1 (Used in place of Sinatra due to future development desires)
 
 ## External Dependencies
 * Twilio
