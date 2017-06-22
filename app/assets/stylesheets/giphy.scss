@@ -1,0 +1,10 @@
+.card-columns {
+  @include media-breakpoint-down(sm) {
+    column-count: 1;
+  }
+  .card {
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.container
+  .row.justify-content-md-center
+    .col.col-md-6
+      .card
+        .card-header
+          %h1.text-center Search for a GIF:
+        .card-block
+          = form_for :giphy, url: root_path, method: :get do |f|
+            .form-group
+              .input-group
+                = f.text_field :q, placeholder: 'Happy Cat', class: 'form-control'
+                .input-group-addon
+                  %i.fa.fa-search
+            = f.submit 'Search', class: 'btn btn-primary'
+            = image_tag 'powered-by-giphy.png', class: 'pull-right'
+
+  - if @gifs.present?
+    .row
+      .col
+        %h1.text-center Choose a GIF that you would like to send.
+    .card-columns
+      - @gifs.each do |src|
+        .card.text-center{class: src.blank? ? 'invisible' : ''}
+          .card-block
+            %img.card-img-bottom{src: src}
+          .card-footer
+            %button.btn.btn-primary Send GIF
