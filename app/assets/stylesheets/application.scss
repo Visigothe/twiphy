@@ -1,2 +1,8 @@
 @import 'bootstrap_mixins';
+
+.row.justify-content-md-center {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
 @import 'giphy';
