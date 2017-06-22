@@ -1,0 +1,19 @@
+.container
+  .row.justify-content-md-center
+    .col.col-md-6
+      .card
+        .card-header
+          %h1.text-center Send GIF to:
+        .card-block
+          = form_for :twilio, url: twilio_send_path, method: :post do |f|
+            .form-group
+              = f.label :phone_number
+              .input-group
+                .input-group-addon +1
+                = f.phone_field :phone_number, placeholder: '4153211978', value: @phone_number, class: 'form-control'
+            .form-group
+              = f.label :body, 'Message'
+              = f.text_field :body, value: @body, class: 'form-control'
+            = f.url_field :media_url, value: @media_url, hidden: true, readonly: true
+            = f.submit 'Send', class: 'btn btn-primary'
+
