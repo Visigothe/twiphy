@@ -58,3 +58,5 @@ the GIF and a message.
 * Tests need to be added for controllers, services, and system.
 * Add ActiveRecord and choose database to allow for authentication/authorization.
 * Use Angular or React to make this a single page app.
+
++1
